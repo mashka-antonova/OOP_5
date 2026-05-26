@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CabinPanel</class>
+ <widget class="QWidget" name="CabinPanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>210</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>12</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>12</number>
+   </property>
+
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="objectName">
+      <string notr="true">panelTitle</string>
+     </property>
+     <property name="text">
+      <string>CABIN PANEL</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QFrame" name="divider1">
+     <property name="objectName">
+      <string notr="true">dividerLine</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QLabel" name="floorSectionLabel">
+     <property name="objectName">
+      <string notr="true">sectionLabel</string>
+     </property>
+     <property name="text">
+      <string>SELECT FLOOR</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="floorButton_5">
+     <property name="text">
+      <string>  FLOOR  5  </string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>42</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="floorButton_4">
+     <property name="text">
+      <string>  FLOOR  4  </string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>42</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="floorButton_3">
+     <property name="text">
+      <string>  FLOOR  3  </string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>42</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="floorButton_2">
+     <property name="text">
+      <string>  FLOOR  2  </string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>42</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="floorButton_1">
+     <property name="text">
+      <string>  FLOOR  1  </string>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>42</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QFrame" name="divider2">
+     <property name="objectName">
+      <string notr="true">dividerLine</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QLabel" name="doorSectionLabel">
+     <property name="objectName">
+      <string notr="true">sectionLabel</string>
+     </property>
+     <property name="text">
+      <string>DOOR CONTROL</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout" name="doorButtonsLayout">
+     <property name="spacing">
+      <number>4</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="openDoorsButton">
+       <property name="text">
+        <string>▷ OPEN</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeDoorsButton">
+       <property name="text">
+        <string>◁ CLOSE</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item>
+    <widget class="QFrame" name="divider3">
+     <property name="objectName">
+      <string notr="true">dividerLine</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::HLine</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="alarmButton">
+     <property name="text">
+      <string>🔔  ALARM</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="emergencyStopButton">
+     <property name="text">
+      <string>⚠  EMERGENCY STOP</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="unlockButton">
+     <property name="text">
+      <string>🔓  UNLOCK / RESET</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

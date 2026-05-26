@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>780</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Elevator Simulation · Backrooms</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ── Base ── */
+QMainWindow, QWidget {
+    background-color: #0e0d0b;
+    color: #c8b87a;
+    font-family: &quot;Courier New&quot;, monospace;
+    font-size: 13px;
+}
+
+/* ── Panels and frames ── */
+QFrame {
+    border: 1px solid #2e2818;
+    border-radius: 1px;
+}
+
+/* ── Panel title ── */
+QLabel#panelTitle {
+    color: #e0c870;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border: none;
+    padding: 2px 0px;
+}
+
+QLabel#sectionLabel {
+    color: #6a5e38;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border: none;
+}
+
+/* ── Status rows ── */
+QLabel#statusKey {
+    color: #6a5e38;
+    border: none;
+    font-size: 12px;
+}
+QLabel#statusValue {
+    color: #c8b87a;
+    font-weight: bold;
+    border: none;
+}
+
+/* ── Divider ── */
+QFrame#dividerLine {
+    color: #2e2818;
+    border: none;
+    background-color: #2e2818;
+    max-height: 1px;
+}
+
+/* ── Standard buttons ── */
+QPushButton {
+    background-color: #1a1812;
+    color: #b8a868;
+    border: 1px solid #3a3020;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-family: &quot;Courier New&quot;, monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+QPushButton:hover {
+    background-color: #2a2418;
+    border-color: #7a6a40;
+    color: #d8c880;
+}
+QPushButton:pressed {
+    background-color: #c8b87a;
+    color: #0e0d0b;
+}
+
+/* ── Floor buttons active state ── */
+QPushButton[active=&quot;true&quot;] {
+    background-color: #3a3010;
+    border-color: #c8b87a;
+    color: #f0e090;
+}
+
+/* ── Call buttons in elevator view ── */
+QPushButton#callButton {
+    background-color: #141210;
+    border: 1px solid #3a3020;
+    color: #8a7848;
+    font-size: 14px;
+    padding: 2px;
+    border-radius: 2px;
+}
+QPushButton#callButton:hover {
+    background-color: #222018;
+    border-color: #c8b87a;
+    color: #e0d090;
+}
+QPushButton#callButton:pressed {
+    background-color: #c8b87a;
+    color: #0e0d0b;
+}
+
+/* ── Emergency stop ── */
+QPushButton#emergencyStopButton {
+    background-color: #2a0808;
+    border: 1px solid #882020;
+    color: #e05050;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+QPushButton#emergencyStopButton:hover {
+    background-color: #400c0c;
+    border-color: #cc3030;
+    color: #ff7070;
+}
+QPushButton#emergencyStopButton:pressed {
+    background-color: #cc3030;
+    color: #0e0d0b;
+}
+
+/* ── Unlock button ── */
+QPushButton#unlockButton {
+    background-color: #081808;
+    border: 1px solid #205820;
+    color: #50a850;
+    letter-spacing: 2px;
+}
+QPushButton#unlockButton:hover {
+    background-color: #0c280c;
+    border-color: #40a840;
+    color: #70c870;
+}
+
+/* ── Alarm button ── */
+QPushButton#alarmButton {
+    background-color: #18140a;
+    border: 1px solid #5a4a10;
+    color: #c8b030;
+}
+
+/* ── Shaft cell ── */
+QLabel#shaftCell {
+    background-color: #0a0906;
+    border: 1px solid #2a2210;
+    color: #3a3020;
+    font-size: 16px;
+    font-family: &quot;Courier New&quot;, monospace;
+    border-radius: 2px;
+}
+QLabel#shaftCell[active=&quot;true&quot;] {
+    background-color: #1e1a08;
+    border-color: #c8b87a;
+    color: #e0d080;
+    font-size: 15px;
+}
+
+/* ── Floor and level labels ── */
+QLabel#floorLabel {
+    color: #e0d090;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    background: transparent;
+}
+QLabel#levelNameLabel {
+    color: #6a5e38;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border: none;
+    background: transparent;
+}
+
+/* ── Log panel ── */
+QTextEdit#logOutput {
+    background-color: #070605;
+    border: 1px solid #1e1a10;
+    color: #988862;
+    font-family: &quot;Courier New&quot;, monospace;
+    font-size: 12px;
+    padding: 4px;
+}
+
+/* ── Scrollbars ── */
+QScrollBar:vertical {
+    background: #0a0906;
+    width: 8px;
+    border: none;
+}
+QScrollBar::handle:vertical {
+    background: #3a3020;
+    border-radius: 4px;
+    min-height: 20px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #6a5a30;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="outerLayout" stretch="1,0">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>6</number>
+    </property>
+    <property name="topMargin">
+     <number>6</number>
+    </property>
+    <property name="rightMargin">
+     <number>6</number>
+    </property>
+    <property name="bottomMargin">
+     <number>6</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="topLayout" stretch="2,0,0">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="ElevatorView" name="elevatorView" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>420</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="CabinPanel" name="cabinPanel" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>210</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>210</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="StatusPanel" name="statusPanel" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>260</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>260</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="LogPanel" name="logPanel" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>190</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>190</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ElevatorView</class>
+   <extends>QWidget</extends>
+   <header>elevatorView.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CabinPanel</class>
+   <extends>QWidget</extends>
+   <header>cabinPanel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>StatusPanel</class>
+   <extends>QWidget</extends>
+   <header>statusPanel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>LogPanel</class>
+   <extends>QWidget</extends>
+   <header>logPanel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
